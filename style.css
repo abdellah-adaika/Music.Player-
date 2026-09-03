@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #211d25;
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.music-app {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.now-playing,
+.my-music {
+    background: #08090f;
+    border-radius: 35px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.top-bar,
+.music-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.now-playing {
+  position: relative;
+}
+
+.top-bar h2,
+.music-header h2 {
+    font-size: 20px;
+}
+
+.back-btn,
+.like-btn,
+.menu-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #20202d;
+    font-size: 20px;
+}
+
+
+/* =========================
+   NOW PLAYING
+========================= */
+
+.song-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 30px;
+}
+
+.song-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.song-info {
+    text-align: center;
+}
+
+.song-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.artist-name {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.song-description {
+    color: #777;
+    line-height: 1.6;
+    max-width: 350px;
+    margin: auto;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-section {
+    margin-top: 40px;
+}
+
+.progress-bar {
+    width: 100%;
+    accent-color: #d7f533;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =========================
+   PLAYER CONTROLS
+========================= */
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.player-controls button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #20202d;
+    font-size: 17px;
+}
+
+.player-controls .play-btn {
+    width: 65px;
+    height: 65px;
+    background: #d7f533;
+    color: #111;
+    font-size: 22px;
+}
+
+
+/* =========================
+   MY MUSIC
+========================= */
+
+.categories {
+    display: flex;
+    gap: 10px;
+    margin: 35px 0 25px;
+    overflow-x: auto;
+}
+
+.category {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    border-radius: 25px;
+    background: #20202d;
+    color: #aaa;
+}
+
+.category.active {
+    background: #d7f533;
+    color: #111;
+}
+
+
+/* =========================
+   SONG LIST
+========================= */
+
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.song-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.song-card:hover {
+    background: #151620;
+}
+
+.song-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.song-details {
+    flex: 1;
+}
+
+.song-details h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.song-details p {
+    color: #777;
+    font-size: 13px;
+}
+
+.song-play-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #20202d;
+}
+
+.volume-control {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  position: absolute;
+  right: 10px;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.volume-control i {
+    padding-top:15px;
+}
+.volume-bar {
+  writing-mode:vertical-lr;
+  direction: rtl;
+}
+.playlist {
+  display: none;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  width:100%;
+}
+.playlist-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  background-color:#222;
+  margin-bottom:5px;
+}
+.song-item.active {
+  background-color: #444;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .music-app {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .now-playing,
+    .my-music {
+        padding: 25px 20px;
+    }
+
+    .song-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .song-image {
+        width: 210px;
+        height: 210px;
+    }
+
+    .song-title {
+        font-size: 24px;
+    }
+
+    .player-controls button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .player-controls .play-btn {
+        width: 58px;
+        height: 58px;
+    }
+}
+

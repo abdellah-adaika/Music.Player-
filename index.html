@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Music Player</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="music-app">
+    <section class="now-playing">
+      <header class="top-bar">
+        <button class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <h2>Now Playing</h2>
+        <button class="like-btn">
+        <i class="fa-regular fa-heart like-icon"></i>
+        </button>
+        </header>
+        <!-- Song Image -->
+        <div class="song-image-container">
+        <img class="song-image"
+        src="song-1.jpg"
+        alt="Song cover">
+        </div>
+        <!-- Song Information -->
+        <div class="song-info">
+        <h1 class="song-title">
+          Midnight Dreams
+        </h1>
+        <p class="artist-name">
+          Alex Carter
+        </p>
+        <p class="song
+        -description">
+        Lost in the rhythm drifting through
+          the night.
+        </p>
+        </div>
+        <audio class="audio-player" src="song-1.mp3"></audio>
+        <!-- Progress -->
+        <div class="progress-section">
+        <input class="progress-bar"
+        type="range"
+        min="0"
+        max="100"
+        value="30">
+        <div class="time-info">
+        <span class="current-time">
+        0:28
+        </span>
+        <span class="duration">
+        3:15
+        </span>
+        </div>
+        </div>
+        <!-- Player Controls -->
+        <div class="player-controls">
+        <button class="repeat-btn">
+          <i class="fa-solid fa-repeat repeat-icon"></i>
+          <span class="repeat-one">1</span>
+          </button>
+        <button class="previous-btn">
+        <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="next-btn">
+        <i class="fa-solid fa-forward-step"></i>
+        </button>
+        <button class="playlist-btn">
+        <i class="fa-solid fa-list"></i>
+        </button>
+        <div class="playlist active"></div>
+        </div>
+        <!-- Volume Control -->
+        <div class="volume-control">
+          <input
+          type="range"
+          class="volume-bar"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1">
+          <i class="fa-solid fa-volume-high volume-icon"></i>
+          </div>
+        </section>
+        <section class="my-music">
+        <header class="music-header">
+        <button class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <h2>My Music</h2>
+        <button class="menu-btn">
+        <i class="fa-solid fa-ellipsis"></i>
+        </button>
+        </header>
+        <!-- Categories -->
+        <div class="categories">
+        <button class="category active">
+          All
+        </button>
+        <button class="category">
+          Playlists
+        </button>
+        <button class="category">
+          Liked Songs
+        </button>
+        <button class="category">
+          Downloads
+        </button>
+        </div>
+        <!-- Songs -->
+        <div class="songs-list">
+        <div class="song-card">
+        <img src="song-1.jpg" alt="Song cover">
+        <div class="song-details">
+        <h3>Midnight Dreams</h3>
+        <p>Alex Carter • 8 Songs</p>
+        </div>
+        <button class="song-play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        </div>
+        <div class="song-card">
+        <img src="song-2.jpg" alt="Song cover">
+        <div class="song-details">
+        <h3>Lost in the Rain</h3>
+        <p>Daniel Rose • 12 Songs</p>
+        </div>
+        <button class="song-play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        </div>
+        <div class="song-card">
+        <img src="song-3.jpg" alt="Song cover">
+        <div class="song-details">
+        <h3>Silent Streets</h3>
+        <p>Nova • 10 Songs</p>
+        </div>
+        <button class="song-play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        </div>
+        <div class="song-card">
+        <img src="song-4.jpg" alt="Song cover">
+        <div class="song-details">
+        <h3>After Midnight</h3>
+       <p>Leo James • 15 Songs</p>
+        </div>
+        <button class="song-play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        </div>
+        <div class="song-card">
+        <img src="song-5.jpg" alt="Song cover" >
+        <div class="song-details">
+        <h3>Ocean Lights</h3>
+        <p>Maya • 9 Songs</p>
+        </div>
+        <button class="song-play-btn">
+        <i class="fa-solid fa-play"></i>
+        </button>
+        </div>
+        </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
